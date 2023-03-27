@@ -1,6 +1,5 @@
 <script setup>
 import Header from '../layout/Header.vue'
-import Footer from '../layout/Footer.vue'
 import SideBar from '../layout/SideBar.vue'
 import TableOfContent from '../layout/TableOfContent.vue'
 </script>
@@ -11,15 +10,15 @@ import TableOfContent from '../layout/TableOfContent.vue'
       <Header class="py-4" />
     </div>
 
-    <div class="mt-16 w-full lg:flex">
+    <div class="w-full mt-16 lg:flex">
       <div>
-        <div class="hide-scroll h-screen overflow-y-auto sticky top-20">
+        <div class="sticky h-screen overflow-y-auto hide-scroll top-20">
           <SideBar />
         </div>
       </div>
 
       <div class="flex min-w-0 pt-10 lg:static lg:max-h-full">
-        <div class="min-w-0 flex-auto px-6">
+        <div class="flex-auto min-w-0 px-6">
           <header>
             <h1 class="inline-block text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 sm:text-3xl">
               {{ $frontmatter.title }}
@@ -28,26 +27,15 @@ import TableOfContent from '../layout/TableOfContent.vue'
               {{ $frontmatter.description }}
             </p>
           </header>
-          <Content class="prose prose-slate mt-8 dark:prose-dark" />
+          <Content class="mt-8 prose prose-slate dark:prose-dark" />
         </div>
         <div>
-          <div class="hide-scroll overflow-y-auto h-screen w-full sticky top-20">
+          <div class="sticky w-full h-screen overflow-y-auto hide-scroll top-20">
             <TableOfContent />
           </div>
         </div>
       </div>
     </div>
-
-    <div class="mt-16 relative">
-      <div class="absolute inset-0 flex items-center" aria-hidden="true">
-        <div class="w-full border-t border-gray-300" />
-      </div>
-      <div class="relative flex justify-center">
-        <span class="bg-white px-2 text-sm text-gray-500" />
-      </div>
-    </div>
-
-    <Footer />
   </div>
 </template>
 

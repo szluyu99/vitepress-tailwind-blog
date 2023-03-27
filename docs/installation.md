@@ -118,21 +118,36 @@ If you're already familiar with PostCSS you probably know what you need to do, i
 
 When building for production, be sure to configure the `purge` option to remove any unused classes for the smallest file size:
 
-```diff-js
-  // tailwind.config.js
-  module.exports = {
-+   purge: [
-+     './src/**/*.html',
-+     './src/**/*.js',
-+   ],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-      extend: {},
-    },
-    variants: {},
-    plugins: [],
-  }
+```js
+// tailwind.config.js
+module.exports = {
+  purge: [ // [!code ++]
+    './src/**/*.html', // [!code ++]
+    './src/**/*.js', // [!code ++]
+  ], // [!code ++]
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+}
 ```
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Removed' // [!code --]
+      msg: 'Added' // [!code ++]
+    }
+  }
+}
+```
+
+::: info
+This is an info box.
+:::
 
 Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more about tree-shaking unused styles for best performance.
 
@@ -201,7 +216,6 @@ npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css
 
 Read about [adding base styles](/docs/adding-base-styles), [extracting components](/docs/extracting-components), and [adding new utilities](/docs/adding-new-utilities) to learn more about adding custom CSS on top of Tailwind.
 
-
 ### Customizing your configuration
 
 If you'd like to customize what Tailwind generates, create a `tailwind.config.js` file using the Tailwind CLI tool:
@@ -256,7 +270,6 @@ NODE_ENV=production npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dis
 ```
 
 This will make sure Tailwind removes any unused CSS for best performance. Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more.
-
 
 ---
 

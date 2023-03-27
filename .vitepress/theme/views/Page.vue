@@ -12,9 +12,9 @@ import TableOfContent from '../layout/TableOfContent.vue'
 
     <div class="mt-16 w-full lg:flex">
       <!-- TODO: -->
-      <div class="sticky top-10">
-        <SideBar />
-      </div>
+      <!-- <div class="sticky top-10"> -->
+      <SideBar />
+      <!-- </div> -->
 
       <div class="flex min-w-0 pt-10 lg:static lg:max-h-full">
         <div class="min-w-0 flex-auto px-6">
@@ -34,9 +34,9 @@ import TableOfContent from '../layout/TableOfContent.vue'
           <footer />
         </div>
 
-        <div class="sticky top-20">
-          <TableOfContent />
-        </div>
+        <!-- <div class="sticky top-20"> -->
+        <TableOfContent />
+        <!-- </div> -->
       </div>
     </div>
   </div>

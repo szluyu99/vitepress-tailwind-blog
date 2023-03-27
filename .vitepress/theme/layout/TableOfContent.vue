@@ -13,7 +13,7 @@ const { page } = useData()
         v-for="section in page.headers" :key="section"
         :class="{ 'ml-4': section.level === 3 }"
       >
-        <a class="flex items-start py-1 group hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+        <a :href="section.link" class="flex items-start py-1 group textslate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
           <template v-if="section.level === 3">
             <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 overflow-visible text-slate-400 group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
               <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />

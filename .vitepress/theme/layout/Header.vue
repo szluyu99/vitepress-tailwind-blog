@@ -1,11 +1,12 @@
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import Logo from '../components/Logo.vue'
 import OutLink from '../components/OutLink.vue'
 import IconGitHub from '../icons/IconGitHub.vue'
 // Same code for Layout.vue, not sure how to properly reuse
 
+const { theme } = useData()
 const route = useRoute()
 const isIndex = computed(() => route.path.replace(/index.html$/, '') === '/')
 </script>
@@ -28,14 +29,16 @@ const isIndex = computed(() => route.path.replace(/index.html$/, '') === '/')
               Docs
             </a>
           </li>
-          <li>Blog</li>
+          <li>
+            Blog
+          </li>
         </ul>
       </nav>
       <div
         class="flex items-center pl-6 ml-6 border-l border-slate-200 dark:border-slate-800"
       >
         <!-- TODO: dark theme button -->
-        <OutLink href="https://github.com">
+        <OutLink :href="theme.repo">
           <IconGitHub />
         </OutLink>
       </div>

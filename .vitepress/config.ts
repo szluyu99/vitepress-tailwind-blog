@@ -6,7 +6,7 @@ export default defineConfig({
   title: 'My Awesome Project',
   description: 'A VitePress Site',
   themeConfig: {
-    repo: 'https://github.com/haoranpb/vitepress-tailwind-documentation',
+    repo: 'https://github.com/szluyu99/vitepress-tailwind-blog',
     pages: fetchDocs(),
     collections: {
       'Getting started': [

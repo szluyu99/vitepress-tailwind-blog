@@ -3,6 +3,8 @@ import { fetchDocs } from './fetchDocs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // github page
+  // base: '/vitepress-tailwind-blog/',
   title: 'My Awesome Project',
   description: 'A VitePress Site',
   themeConfig: {
